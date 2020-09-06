@@ -21,7 +21,7 @@ function gpacalc() {
   var z=gradepoint(q);
 
   var gpa=0;
-  gpa=((4*a)+(4*b)+(3*c)+(3*d)+(3*e)+(4*f)+(2*g)+(2*h))/25;
+  gpa=((4*s)+(4*t)+(3*u)+(3*v)+(3*w)+(4*x)+(2*y)+(2*z))/25;
   alert(gpa);
 
 
