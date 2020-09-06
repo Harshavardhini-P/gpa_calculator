@@ -23,49 +23,100 @@
         <tr>
           <th>HS8151</th>
           <th>Communicative English</th>
-          <th><input type="text" ID="a"></th>
+          <th><input type="text" ID="a" placeholder="Grade" required="required"></th>
         </tr>
         <tr>
           <th>MA8151</th>
           <th>Engineering Mathematics-1</th>
-          <th><input type="text" ID="b"></th>
+          <th><input type="text" ID="b" placeholder="Grade" required="required"></th>
         </tr>
         <tr>
           <th>PH8151</th>
           <th>Engineering Physics</th>
-          <th><input type="text" ID="c"></th>
+          <th><input type="text" ID="c" placeholder="Grade" required="required"></th>
         </tr>
         <tr>
           <th>CY8151</th>
           <th>Engineering Chemistry</th>
-          <th><input type="text" ID="d"></th>
+          <th><input type="text" ID="d" placeholder="Grade" required="required"></th>
         </tr>
         <tr>
           <th>GE8151</th>
           <th>Problem Solving and Python Programming</th>
-          <th><input type="text" ID="e"></th>
+          <th><input type="text" ID="e" placeholder="Grade" required="required"></th>
         </tr>
         <tr>
           <th>GE8152</th>
           <th>Engineering Graphics</th>
-          <th><input type="text" ID="f"></th>
+          <th><input type="text" ID="f" placeholder="Grade" required="required"></th>
         </tr>
         <tr>
           <th>GE8161</th>
           <th>Problem Solving and Python Programming Laboratory</th>
-          <th><input type="text" ID="g"></th>
+          <th><input type="text" ID="g" placeholder="Grade" required="required"></th>
         </tr>
         <tr>
           <th>BS8161</th>
           <th>Physics and Chemistry Laboratory</th>
-          <th><input type="text" ID="h"></th>
+          <th><input type="text" ID="h"placeholder="Grade" required="required"></th>
         </tr>
       </table>
     
-      <button class= "button" type="button" onClick=display()>Calculate GPA
-        </button>
+      
+        
+        <input class="button" type="submit" value="Calculate GPA" id="result" onclick="gpacalc()">
+        <h4 id="answer"></h4>
         <p></p>
-        <script src="script.js"></script>
+        <script>
+        function gpacalc() {
+          var j=document.getElementById("a").value; 
+          var k=document.getElementById("b").value; 
+          var l=document.getElementById("c").value; 
+          var m=document.getElementById("d").value; 
+          var n=document.getElementById("e").value; 
+          var o=document.getElementById("f").value; 
+          var p=document.getElementById("g").value; 
+          var q=document.getElementById("h").value; 
+ 
+        var s=gradepoint(j);
+        var t=gradepoint(k);
+        var u=gradepoint(l);
+        var v=gradepoint(m);
+        var w=gradepoint(n);
+        var x=gradepoint(o);
+        var y=gradepoint(p);
+        var z=gradepoint(q);
+
+        var gpa=0;
+        gpa=((4*s)+(4*t)+(3*u)+(3*v)+(3*w)+(4*x)+(2*y)+(2*z))/25;
+        document.getElementById("answer").innerHTML="Your GPA is "+gpa;
+
+
+      function gradepoint(grade)  {
+        if ((grade=== 'O') || (grade==='o')) {
+            return 10;
+        }
+        else if ((grade=== 'A+')||(grade==='a+')) {
+            return 9;
+        }
+      else if ((grade=== 'A')||(grade==='a')) {
+            return 8;
+      }
+      else if ((grade=== 'B+')||(grade==='b+')) {
+          return 7;
+      }
+      else if ((grade=== 'B')||(grade==='b')) {
+          return 6;
+      }
+      else if ((grade=== "RA")||(grade==="ra")||(grade==="SA")||(grade==="sa")||(grade==="W")||(grade==="w")) {
+        return 0;
+      }
+      else {
+    
+      }
+  }
+}
+        </script>
       </form>
       
     </div>
@@ -74,8 +125,8 @@
       <div class="footer-logo">By Jai & Harsha</div>
       <div class="footer-list">
         <ul>
-          <li>https://github.com/Harshavardhini-P</li>
-          <li>https://github.com/Jai01122000</li>
+          <li><a href="mailto:harsha.par13@gmail.com">Harshavardhini P</a></li>
+          <li><a href="mailto:kjai6935@gmail.com">Jai Kumar S D</a></li>
         </ul>
       </div>
     </div>
